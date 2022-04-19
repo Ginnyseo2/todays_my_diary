@@ -115,9 +115,7 @@ public class DairyController {
     public ResponseEntity<List<Dairy>> searchDiary(@RequestParam String keyword, @RequestParam String userId) {
         HttpStatus status;
 
-        System.out.println("키워드" + keyword);
         List<Dairy> diares = dairyService.searchDiaries(keyword, userId);
-        System.out.println("컨트롤러 찍혀라");
 
         if (diares != null) {
             status = HttpStatus.OK;
@@ -126,8 +124,7 @@ public class DairyController {
             status = HttpStatus.NO_CONTENT;
         }
 
-        System.out.println("컨트롤러 찍혀라222");
-        return new ResponseEntity<>(diares, status);
+        return new ResponseEntity<List<Dairy>>(diares, status);
     }
 
 

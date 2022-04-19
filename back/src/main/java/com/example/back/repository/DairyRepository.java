@@ -13,8 +13,7 @@ public interface DairyRepository extends JpaRepository<Dairy, Long> {
 
     Dairy findDairyByDno(Long dno);
     Dairy deleteDairyByDno(Long dno);
+
     List<Dairy> findByContentContains(String keyword);
 
-//    @Query(value = "select * from dairy where content like '%:keyword%'")
-//    List<Dairy>searchDiares(@Param("keyword") String keyword);
 }

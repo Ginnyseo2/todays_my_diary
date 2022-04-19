@@ -77,6 +77,7 @@ public class DairyServiceImpl implements DairyService{
     @Override
     public List<Dairy> searchDiaries(String keyword, String userId) {
         System.out.println(keyword +" 서비스키워드");
+
         List<Dairy> diares = dairyRepository.findByContentContains(keyword);
         System.out.println("찍혀라ㅏㅏㅏ");
 
