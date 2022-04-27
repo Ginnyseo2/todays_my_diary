@@ -64,7 +64,6 @@ public class DiaryController {
             status = HttpStatus.INTERNAL_SERVER_ERROR;
             hashMap.put("ERROR", "빈 값이 들어있습니다.");
             hashMap.put("Status", status);
-
         }
         return new ResponseEntity<>(hashMap, status);
     }
