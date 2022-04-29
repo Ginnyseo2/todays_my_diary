@@ -83,12 +83,11 @@ public class UserController {
         return new ResponseEntity<>(map, HttpStatus.OK);
     }
 
-    @PutMapping("/modify")
+    @PatchMapping("/modify")
     @ApiOperation(value = "사용자 정보 수정", notes = "아이디로 사용자 정보 수정", response = String.class)
     public ResponseEntity<Map<String, Object>> modifyUser(@RequestParam String userId, @RequestBody UserDto userDto){
         Map<String, Object> map = new HashMap<>();
         User user = userService.modifyUser(userId, userDto);
-
         map.put("user", user);
 
         return new ResponseEntity<>(map, HttpStatus.OK);
